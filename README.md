@@ -15,7 +15,7 @@ The dataset includes predictor and target variables. Predictor variables store m
 2. **Removing Outliers**: Filter out data points exceeding certain thresholds.
 3. **Checking for Multicollinearity**: Identify and remove highly correlated feature variables.
 4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
-   As it turns out, the string NA in database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string 'NAM'.
+   As it turns out, the string NA in database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
 6. **Splitting the Data**: Split data into training and testing sets.
 7. **Encoding the Data**: Convert categorical data into numerical data.
 
