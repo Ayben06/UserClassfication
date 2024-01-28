@@ -19,6 +19,7 @@ The database I worked with consists of seven columns used as predictor variables
    - Number of courses surpassing 10
    - Number of practice exams started higher than 10
    - Minutes spent on exams going beyond 40 minutes
+   - 
 We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
 no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
    1. To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
