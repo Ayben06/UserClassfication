@@ -13,14 +13,15 @@ The database I worked with consists of seven columns used as predictor variables
 ## Data Preprocessing
 1. **Importing the Database**: Import and analyze the dataset.The first step to creating a machine learning model is importing the data source. Import the data in the ml_datasource.csv file and carefully study the output.
 2. **Removing Outliers**: Examine the distribution plots of the numerical features and study their skewness.
+   Remove data points from the `DataFrame` that meet the following criteria:
 
-Remove data points from the `DataFrame` that meet the following criteria:
-
-- Minutes watched larger than 1,000
-- Number of courses surpassing 10
-- Number of practice exams started higher than 10
-- Minutes spent on exams going beyond 40 minutes
-- 
+   - Minutes watched larger than 1,000
+   - Number of courses surpassing 10
+   - Number of practice exams started higher than 10
+   - Minutes spent on exams going beyond 40 minutes
+   We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
+no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
+   1. To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
 3. **Checking for Multicollinearity**: Identify and remove highly correlated feature variables.
 4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
    As it turns out, the string NA in database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
