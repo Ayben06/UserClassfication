@@ -8,11 +8,19 @@ The project is inspired by an initiative in 2022 to predict student purchases be
 As you will see, such class imbalance combined with humans’ unpredictable behavior makes it challenging to predict student purchases.
 
 ## Database
-The dataset includes predictor and target variables. Predictor variables store metrics related to student behavior recorded during the free-plan period.
+The database I worked with consists of seven columns used as predictor variables and one as a target variable (the `purchased` column). The target variable is a binary column where `0` indicates a student who hasn’t bought a subscription and `1` represents a student who has. Predictor variables store metrics related to student behavior recorded during the free-plan period.
 
 ## Data Preprocessing
-1. **Importing the Database**: Import and analyze the dataset.
-2. **Removing Outliers**: Filter out data points exceeding certain thresholds.
+1. **Importing the Database**: Import and analyze the dataset.The first step to creating a machine learning model is importing the data source. Import the data in the ml_datasource.csv file and carefully study the output.
+2. **Removing Outliers**: Examine the distribution plots of the numerical features and study their skewness.
+
+Remove data points from the `DataFrame` that meet the following criteria:
+
+- Minutes watched larger than 1,000
+- Number of courses surpassing 10
+- Number of practice exams started higher than 10
+- Minutes spent on exams going beyond 40 minutes
+- 
 3. **Checking for Multicollinearity**: Identify and remove highly correlated feature variables.
 4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
    As it turns out, the string NA in database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
