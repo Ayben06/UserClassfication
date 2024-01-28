@@ -33,8 +33,8 @@ The database I worked with consists of seven columns used as predictor variables
 
 4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
    As it turns out, the string NA in the database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
-6. **Splitting the Data**: Split data into training and testing sets.
-7. **Encoding the Data**: Convert categorical data into numerical data.
+6. **Splitting the Data**: Now that the data’s been preprocessed, it’s time to split it into targets and inputs. The former should include only the purchased column, while the latter should contain all columns except the purchased one.
+7. **Encoding the Data**: Before feeding the data to any training algorithm, we must store all features as numerical values. We should therefore deal with the student_country column storing values of a string data type. In this project, we’ll achieve this using the OrdinalEncoder class provided by sklearn. 
 
 ## Creating Models
 ### Logistic Regression Model
