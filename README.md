@@ -20,9 +20,9 @@ The database I worked with consists of seven columns used as predictor variables
    - Number of practice exams started higher than 10
    - Minutes spent on exams going beyond 40 minutes
    - 
-We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
-no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
-   1. To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
+   We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
+   no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
+   - To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
 3. **Checking for Multicollinearity**: Identify and remove highly correlated feature variables.
 4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
    As it turns out, the string NA in database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
