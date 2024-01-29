@@ -11,9 +11,10 @@ As you will see, such class imbalance combined with humans’ unpredictable beha
 The database I worked with consists of seven columns used as predictor variables and one as a target variable (the `purchased` column). The target variable is a binary column where `0` indicates a student who hasn’t bought a subscription and `1` represents a student who has. Predictor variables store metrics related to student behavior recorded during the free-plan period.
 
 ## Data Preprocessing
-### Importing the Database: Import and analyze the dataset.The first step to creating a machine learning model is importing the data source. Import the data in the ml_datasource.csv file and carefully study the output.
-###Removing Outliers: Examine the distribution plots of the numerical features and study their skewness.
-   Remove data points from the `DataFrame` that meet the following criteria:
+### Importing the Database
+Import and analyze the dataset. The first step to creating a machine learning model is importing the data source. Import the data in the ml_datasource.csv file and carefully study the output.
+### Removing Outliers
+Examine the distribution plots of the numerical features and study their skewness.Remove data points from the `DataFrame` that meet the following criteria:
 
    - Minutes watched larger than 1,000
    - Number of courses surpassing 10
