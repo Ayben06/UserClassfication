@@ -19,7 +19,7 @@ The database I worked with consists of seven columns used as predictor variables
    - Number of courses surpassing 10
    - Number of practice exams started higher than 10
    - Minutes spent on exams going beyond 40 minutes
-   - 
+    
    We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
    no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
    - To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
@@ -38,8 +38,19 @@ The database I worked with consists of seven columns used as predictor variables
 
 ## Creating Models
 ### Logistic Regression Model
-- Train a logistic regression model using `statsmodels`.
-- Display the summary and confusion matrix.
+Create a logistic regression model using the training data and the `Logit()` function from the `statsmodels` library. Output the result’s summary. Then, predict the outcome of the test data.
+
+- If the predicted probability is smaller than or equal to 0.5, consider the prediction 0—the student won’t purchase a subscription.
+- If the predicted probability is larger than 0.5, consider the prediction 1—the student will purchase a subscription.
+
+Create a confusion matrix of predictions.
+- Accuracy: The model accurately predicted outcomes for 94.90% of test instances. While high accuracy is important, additional metrics offer a more thorough evaluation.
+
+- Precision: At 87.96%, the model excelled in correctly classifying positive instances, crucial when minimizing false positives is a priority.
+
+- Recall: With a recall of 51.69%, the model effectively captured a substantial portion of actual positive instances, vital when minimizing false negatives is a priority.
+
+- F1-score: The F1-score, balancing precision and recall, stands at 65.12%, providing a comprehensive measure of overall performance.
 
 ### K-Nearest Neighbors Model
 - Use GridSearch to find the best KNN model.
