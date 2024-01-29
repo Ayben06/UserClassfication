@@ -27,8 +27,14 @@ Examine the distribution plots of the numerical features and study their skewnes
 
 ### Checking for Multicollinearity
 Identify and remove highly correlated feature variables. The term ‘multicollinearity’ refers to a situation where two or more independent variables in a regression model are highly linearly related. Such a problem can make it difficult to determine the individual effect of predictors on the dependent variable and can lead to unstable coefficient estimates.
+
+
 Although this project considers a classification rather than a regression problem, removing related feature variables is still important. A logistic regression model, for example, assumes its predictors are independent. Moreover, dealing with multicollinearity helps reduce the dimensionality (the number of feature variables) of a problem; high dimensionality is an issue that the k-nearest neighbors model, for instance, could suffer from. (Decision trees and random forests are seldom affected by multicollinearity.)
+
+
 The Variance Inflation Factor (VIF) is a measure used to detect the presence of multicollinearity in a dataset. A value of 1 indicates that the features are not correlated, while a value greater than 1 suggests the presence of a correlation. As a rule of thumb, a variable with a VIF value higher than 5 indicates problematic multicollinearity.
+
+
 Your task now is to check for multicollinearity in the data using the variance inflation factor (VIF) metric. Identify and remove the numerical feature with the highest VIF value. This is done because this feature is likely redundant with others in the dataset, and its removal can help reduce multicollinearity. After removing the column, calculate the VIF values again for the remaining numerical features. Now identify the feature with the highest VIF value.
 
 ### Dealing with NaN Values
@@ -74,7 +80,10 @@ Before feeding the training data to the model, I use `sklearn`'s `MinMaxScaler
 To test the model, build a confusion matrix and print a classification report.
 
 ### Decision Trees Model
-Use the (non-scaled) training data and `sklearn`’s `GridSearch` and `DecisionTreeClassifier` functions to find the best decision tree model. Let the best model be determined based on accuracy. Loop only through the parameter ccp_alpha and test the values 0, 0.001, 0.002, 0.003, 0.004, and 0.005. I use the `plot_tree` function to generate a graphical representation of the decision tree.
+Use the (non-scaled) training data and `sklearn`’s `GridSearch` and `DecisionTreeClassifier` functions to find the best decision tree model. Let the best model be determined based on accuracy. Loop only through the parameter ccp_alpha and test the values 0, 0.001, 0.002, 0.003, 0.004, and 0.005. 
+
+I use the `plot_tree` function to generate a graphical representation of the decision tree.
+
 Display the decision tree, build a confusion matrix, and print a classification report. Interpret the results.
 
 ### Random Forests Model
