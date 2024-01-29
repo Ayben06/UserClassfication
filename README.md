@@ -86,6 +86,9 @@ Use the (non-scaled) training data and `sklearn`’s `GridSearch` and `Decis
 
 I use the `plot_tree` function to generate a graphical representation of the decision tree.
 
+![decisiontree](https://github.com/Ayben06/UserClassfication/assets/71720324/81827c0d-847b-4722-9e9b-2416b0ae98ad)
+
+
 Display the decision tree, build a confusion matrix, and print a classification report. Interpret the results.
 
 ### Random Forests Model
@@ -105,3 +108,4 @@ Display the confusion matrix and classification report of the model.
 
 ## Conclusion
 Summarize key findings, limitations, and potential improvements.
+![decisiontree](https://github.com/Ayben06/UserClassfication/assets/71720324/7307491a-2843-41a0-bd75-a60bea1291b2)
