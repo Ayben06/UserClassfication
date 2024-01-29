@@ -52,6 +52,8 @@ Create a logistic regression model using the training data and the `Logit()` f
 - If the predicted probability is larger than 0.5, consider the prediction 1—the student will purchase a subscription.
 
 Create a confusion matrix of predictions.
+
+![lgt_confusionmatrix](https://github.com/Ayben06/UserClassfication/assets/71720324/99a14a6a-3293-4a88-a3a3-f9168a52c03d)
 - Accuracy: The model accurately predicted outcomes for 94.90% of test instances. While high accuracy is important, additional metrics offer a more thorough evaluation.
 
 - Precision: At 87.96%, the model excelled in correctly classifying positive instances, crucial when minimizing false positives is a priority.
