@@ -59,21 +59,31 @@ Create a confusion matrix of predictions.
 - F1-score: The F1-score, balancing precision and recall, stands at 65.12%, providing a comprehensive measure of overall performance.
 
 ### K-Nearest Neighbors Model
-- Use GridSearch to find the best KNN model.
-- Display the confusion matrix and classification report.
+Use the training data and `sklearn`’s `GridSearch` optimizer to find the best K-nearest neighbors model. Let the decision for the best model be based on the accuracy score. Consider the following range of parameters:
+
+- Number of neighbors – between 1 and 50, inclusive
+- Weights – uniform and distance
+
+Build a confusion matrix and print a classification report.
 
 ### Support Vector Machines Model
-- Scale features using MinMaxScaler.
-- Use GridSearch to find the best SVM model.
-- Display the confusion matrix and classification report.
+Use the training data and `sklearn`’s `GridSearch` optimizer and `SVC` (Support Vector Classification) estimator to find the best support vector machines model. Let the decision for the best model again be based on accuracy. Consider the following range of parameters:
+
+- `kernel` – `linear`, `poly`, or `rbf`
+- `C` – between 1 and 10, inclusive
+- `gamma` – `scale` or `auto`.
+
+Before feeding the training data to the model, I use `sklearn`'s `MinMaxScaler` function to constrict the features in ranges between -1 and 1.
+
+To test the model, build a confusion matrix and print a classification report.
 
 ### Decision Trees Model
-- Use GridSearch to find the best decision tree model.
-- Display the decision tree, confusion matrix, and classification report.
+Use the (non-scaled) training data and sklearn’s GridSearch and DecisionTreeClassifier functions to find the best decision tree model. Let the best model be determined based on accuracy. Loop only through the parameter ccp_alpha and test the values 0, 0.001, 0.002, 0.003, 0.004, and 0.005.I use the `plot_tree1` function to generate a graphical representation of the decision tree.
+Display the decision tree, build a confusion matrix, and print a classification report. Interpret the results.
 
 ### Random Forests Model
-- Train a random forests model using the best `ccp_alpha`.
-- Display the confusion matrix and classification report.
+Using sklearn’s RandomForestClassifier and the ccp_alpha value that gave the best accuracy in Decision Trees Model, create a Random Forest model.
+Display the confusion matrix and classification report of the model.
 
 ## Results Interpretation
 1. **Logistic Regression Model**
