@@ -95,17 +95,22 @@ Display the decision tree, build a confusion matrix, and print a classification 
 Using `sklearn`’s `RandomForestClassifier` and the ccp_alpha value that gave the best accuracy in Decision Trees Model, create a Random Forest model.
 Display the confusion matrix and classification report of the model.
 
-## Results Interpretation
-1. **Logistic Regression Model**
-    - LLR p-value: [Provide the actual p-value and interpretation]
-    - Logit model equation: [Provide the equation]
+## Observations:
+   * Logistic Regression: Achieves a good accuracy but has a lower recall for the positive class, indicating that it may not capture all positive instances.
 
-2. **Decision Trees Model**
-    - Influential features: [List the features]
+   * K-Nearest Neighbors: Balanced precision and recall, indicating a good overall performance.
 
-3. **Confusion Matrices and Classification Reports**
-    - Analyze and interpret the results.
+   * Support Vector Machines: High precision but lower recall for the positive class, suggesting it may miss some positive instances.
 
-## Conclusion
-Summarize key findings, limitations, and potential improvements.
-![decisiontree](https://github.com/Ayben06/UserClassfication/assets/71720324/7307491a-2843-41a0-bd75-a60bea1291b2)
+   * Decision Tree: Balanced precision and recall, similar to K-Nearest Neighbors.
+
+   * Random Forest: Similar performance to the Decision Tree, with a slightly higher precision.
+
+## Conclusion:
+   * Accuracy alone is not enough to determine the best model. It's important to consider precision and recall, especially if the data is imbalanced.
+
+   * K-Nearest Neighbors and Decision Tree seem to provide a good balance between precision and recall, making them strong candidates.
+
+   * Random Forest performs well, providing a good balance between precision and recall.
+
+   * Logistic Regression and Support Vector Machines may need further tuning or consideration of different evaluation metrics, especially if the goal is to improve recall for the positive class.
