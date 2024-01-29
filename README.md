@@ -24,7 +24,9 @@ Examine the distribution plots of the numerical features and study their skewnes
    We could’ve lowered the cutoffs and reduced the skewness of the data even more. Still, we should be careful with removing too many datapoints—as a rule of thumb, we should remove
    no more than 5%. Additionally, we should remember that the data is heavily imbalanced, and removing too many datapoints from the minority class would lead to inaccurate predictions.
    - To study the data distributions without outliers, create all six subplots anew using the `data_no_outliers` `DataFrame`.
-3. **Checking for Multicollinearity**: Identify and remove highly correlated feature variables. The term ‘multicollinearity’ refers to a situation where two or more independent variables in a regression model are highly linearly related. Such a problem can make it difficult to determine the individual effect of predictors on the dependent variable and can lead to unstable coefficient estimates.
+
+### Checking for Multicollinearity
+Identify and remove highly correlated feature variables. The term ‘multicollinearity’ refers to a situation where two or more independent variables in a regression model are highly linearly related. Such a problem can make it difficult to determine the individual effect of predictors on the dependent variable and can lead to unstable coefficient estimates.
 
    Although this project considers a classification rather than a regression problem, removing related feature variables is still important. A logistic regression model, for example, assumes its predictors are independent. Moreover, dealing with multicollinearity helps reduce the dimensionality (the number of feature variables) of a problem; high dimensionality is an issue that the k-nearest neighbors model, for instance, could suffer from. (Decision trees and random forests are seldom affected by multicollinearity.)
 
@@ -32,10 +34,13 @@ Examine the distribution plots of the numerical features and study their skewnes
 
    Your task now is to check for multicollinearity in the data using the variance inflation factor (VIF) metric. Identify and remove the numerical feature with the highest VIF value. This is done because this feature is likely redundant with others in the dataset, and its removal can help reduce multicollinearity. After removing the column, calculate the VIF values again for the remaining numerical features. Now identify the feature with the highest VIF value.
 
-4. **Dealing with NaN Values**: Replace NaN values in the `student_country` column.
+### Dealing with NaN Values
+Replace NaN values in the `student_country` column.
    As it turns out, the string NA in the database refers to the country code of Namibia. But after importing the CSV file into a pandas DataFrame, this country code has been translated to     NaN. Substitute all NaN values in the student_country column with the string `NAM`.
-6. **Splitting the Data**: Now that the data’s been preprocessed, it’s time to split it into targets and inputs. The former should include only the purchased column, while the latter should contain all columns except the purchased one.
-7. **Encoding the Data**: Before feeding the data to any training algorithm, we must store all features as numerical values. We should therefore deal with the student_country column storing values of a string data type. In this project, we’ll achieve this using the OrdinalEncoder class provided by sklearn. 
+### Splitting the Data
+Now that the data’s been preprocessed, it’s time to split it into targets and inputs. The former should include only the purchased column, while the latter should contain all columns except the purchased one.
+### Encoding the Data
+Before feeding the data to any training algorithm, we must store all features as numerical values. We should therefore deal with the student_country column storing values of a string data type. In this project, we’ll achieve this using the OrdinalEncoder class provided by sklearn. 
 
 ## Creating Models
 ### Logistic Regression Model
